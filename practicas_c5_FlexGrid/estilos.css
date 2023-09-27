@@ -29,38 +29,31 @@ html {
   font-size: 10px; /*modifica el tamaño de referencia de la RAIZ (origin-16px) */
 }
 
-.titulo {
-  font-family: "Orbitron", sans-serif;
-  color: rgb(131, 38, 21);
-  font-size: 5.5rem;
-}
-
-.encabezado h1 {
-  color: rgb(206, 102, 192);
-  background-color: aquamarine;
+.contenedor {
+  display: flex;
   background-image: url(./img/desktop-wallpaper-rainforest-list-rainforest-plants.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 30vh;
+  height: auto;
   text-align: center;
+  flex-direction: column;
+}
+.titulo {
+  font-family: "Orbitron", sans-serif;
+  color: rgb(206, 102, 192);
+  font-size: 5.5rem;
 }
 
 .tituloLista h2 {
-  background-color: rgb(116, 218, 70);
   text-align: center;
   font-size: 5rem;
 }
 
 .listaPrincipal {
   text-align: center;
-  list-style-type: none;
+  list-style-type: circle;
   color: black;
-  background-color: beige;
-  background-image: url(./img/desktop-wallpaper-rainforest-list-rainforest-plants.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .listaPrincipal a {
@@ -70,28 +63,29 @@ html {
   font-size: 1.6rem;
 }
 
+.contenedorTexto {
+  display: flex;
+}
+
 .texto {
   background-color: rgba(175, 174, 174, 0.582);
   padding: 2rem;
   width: 50%;
-  float: left;
+  font-size: 1.8rem;
+  font-family: "Dancing Script", cursive;
 }
 
 .masTexto {
   background-color: rgba(219, 132, 132, 0.582);
   padding: 1.4rem;
   width: 50%;
-  float: right;
-}
-
-.texto p,
-.masTexto p {
-  font-size: 1.8rem;
+  font-family: "Sacramento", cursive;
+  font-size: 2rem;
 }
 
 h2 {
   font-family: "Dancing Script", cursive;
-  color: red;
+  color: rgb(48, 68, 177);
   font-style: normal;
   font-size: 2.5rem;
 }
@@ -101,19 +95,25 @@ h2 {
   color: blue;
 }
 
-div p {
-  font-family: "Dancing Script", cursive;
-  font-size: 1.5rem;
-}
-
 #piePagina {
+  display: flex;
+  flex-direction: row-reverse;
   font-weight: 900;
-  clear: both;
+  justify-content: space-between;
 }
 
 #piePagina h3 {
   padding-top: 2rem;
-  text-align: center;
+  padding-left: 1rem;
+  text-align: left;
+  display: inline;
+  width: 55%;
+}
+
+.irArriba {
+  padding-top: 0.8rem;
+  display: inline;
+  width: 45%;
 }
 
 .flechaArriba {
@@ -122,178 +122,203 @@ div p {
   display: inline-block;
 }
 
+/* ----------------------------------------------*/
+/* Imagenes*/
+/* -----------------------------------------------*/
+
+.paginaImagenes {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 5px;
+}
+
 .headerImagenes {
   margin: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   background-color: rgba(116, 112, 112, 0.616);
   border-top: solid 10px rgba(73, 72, 72, 0.6);
-  border-right: solid 5px rgba(39, 19, 19, 0.61);
-  border-bottom: solid 7px rgba(73, 72, 72, 0.4);
-  border-left: solid 5px rgba(39, 19, 19, 0.61);
+  border-right: solid 7px rgba(39, 19, 19, 0.61);
+  border-bottom: solid 10px rgba(73, 72, 72, 0.4);
+  border-left: solid 7px rgba(39, 19, 19, 0.61);
 }
 
 .headerImagenes h1 {
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   text-align: center;
   font-size: 5rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-/* .imagenes {
-  background-color: blueviolet;
-} */
+.imagenes {
+  display: grid;
+  grid-template-areas:
+    "h2  h2"
+    "h3  h3"
+    "img1  img2"
+    "inicio  .";
+}
 
 .imagenes h2 {
   text-align: center;
   font-size: 2.5rem;
+  grid-area: h2;
 }
 
 .imagenes h3 {
   text-align: center;
   font-size: 2rem;
+  grid-area: h3;
 }
 
 .imagenesLlamas {
-  width: 50%;
-  padding-left: 25rem;
-  float: left;
+  display: inline;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  grid-area: img1;
 }
 
 .imagenesLlamas2 {
-  width: 50%;
-  float: right;
+  display: inline;
+  width: 100%;
+  height: auto;
+  grid-area: img2;
 }
 
 .imagenes a {
-  display: inline-block;
-  text-align: center;
-  font-size: 2rem;
+  text-align: left;
+  font-size: 1.5rem;
   padding: 1rem;
+  grid-area: inicio;
 }
 
 .videos {
-  /* background-color: rgb(49, 120, 138); */
-  height: 600px;
+  display: grid;
+  grid-template-areas:
+    "titulo  titulo"
+    "descripcion  descripcion"
+    "aib  tutorial"
+    "inicio  .";
 }
 
 .videos h2 {
   text-align: center;
   font-size: 2.5rem;
+  grid-area: titulo;
 }
 
 .videos h3 {
   text-align: center;
   font-size: 2rem;
+  grid-area: descripcion;
 }
 
 .videosBombeoMecanico {
   padding: 1rem;
-  float: right;
+  grid-area: aib;
 }
 
 .videosTutorial {
   padding: 1rem;
-  float: left;
+  grid-area: tutorial;
 }
 
 .videos a {
-  clear: both;
-  display: inline-block;
-  font-size: 2rem;
-  margin: 1rem;
-  padding: 2rem;
+  text-align: left;
+  font-size: 1.5rem;
+  padding: 1rem;
+  grid-area: inicio;
+}
+
+/* ----------------------------------------------*/
+/* Listas*/
+/* -----------------------------------------------*/
+
+.paginaListas {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 5px;
 }
 
 .headerListas {
   margin: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   background-color: rgba(116, 112, 112, 0.616);
   border-top: solid 10px rgba(73, 72, 72, 0.6);
-  border-right: solid 5px rgba(39, 19, 19, 0.61);
-  border-bottom: solid 7px rgba(73, 72, 72, 0.4);
-  border-left: solid 5px rgba(39, 19, 19, 0.61);
+  border-right: solid 7px rgba(39, 19, 19, 0.61);
+  border-bottom: solid 10px rgba(73, 72, 72, 0.4);
+  border-left: solid 7px rgba(39, 19, 19, 0.61);
 }
 
 .headerListas h1 {
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   text-align: center;
   font-size: 5rem;
+}
+
+.contenedorListas {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
 }
 
 .contenedorLD {
   margin: 1rem;
   padding: 1rem;
+  height: 300px;
 }
 
 .contenedorLD h2 {
   text-align: left;
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 .contenedorLD h3 {
   display: inline;
   text-align: left;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
-.descripcion {
+.descripcionAib {
   display: inline;
 }
 
-.contenedorLD a {
-  clear: both;
-  display: inline-block;
-  font-size: 2rem;
-  margin: 1rem;
-  padding: 2rem;
-}
-
-.contenedorLD ul {
-  padding: 1.5rem;
+.contenedorListas ul {
+  padding: 2.5rem;
   line-height: 1.6rem;
 }
 
 .contenedorLO {
-  padding: 1.5rem;
-
-  width: 100%;
-  height: 300px;
-}
-
-.contenedorOrdenVacio {
-  background-color: blueviolet;
-  width: 50%;
-  float: left;
-}
-
-.contenedorLista {
-  width: 50%;
-  float: right;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 .contenedorLO h2 {
   text-align: left;
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 .contenedorLO h3 {
   display: inline;
   text-align: left;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
-.contenedorLO ol {
-  padding: 1.5rem;
+.contenedorLista ol {
+  padding: 2.5rem;
+  line-height: 1.6rem;
+}
+
+.piePaginaListas {
+  display: flex;
+  flex-direction: row;
+  font-weight: 900;
+  justify-content: space-around;
+}
+
+.piePaginaListas a {
+  text-align: left;
   font-size: 1.5rem;
-  line-height: 1.8rem;
-}
-
-.contenedorLO a {
-  display: inline-block;
-  margin-top: 20rem;
-  padding: 2rem;
-  font-size: 2rem;
-  text-align: center;
-  clear: both;
 }
 
 .piePaginaListas {
