@@ -1,0 +1,14 @@
+/* Reset de parámetros */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(157, 218, 212);
+}
+
+html {
+  font-size: 10px; /*modifica el tamaño de referencia de la RAIZ (origin-16px) */
+}
